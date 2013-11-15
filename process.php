@@ -32,7 +32,7 @@ $error = array(
 if ( isset( $_POST['process'] ) && $_POST['process'] == 1 ) {
     $lang = isset( $_POST['lang'] ) ? intval( $_POST['lang'] ) : 1;
     $input = trim( $_POST['input'] );
-    $code = trim( $_POST['source'] );
+    $code = trim(stripslashes( $_POST['source'] ));
 
     $client = new SoapClient( "http://ideone.com/api/1/service.wsdl" );
 
